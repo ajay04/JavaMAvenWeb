@@ -27,6 +27,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
+  # --- NEW STEP: Setup Maven ---
+    - name: Set up Maven
+      uses: s4u/setup-maven-action@v1.12.0
+      with:
+        maven-version: 3.9.6 # Specify the version you need
+    # -----------------------------
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
