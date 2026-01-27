@@ -16,7 +16,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm' # Automatically caches npm dependencies
+          # cache: 'npm' # Automatically caches npm dependencies
 
       - name: Print node.js version
         run: node --version
