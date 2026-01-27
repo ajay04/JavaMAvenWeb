@@ -1,7 +1,3 @@
-on:
-  push:
-    branches:
-      - master
 jobs:
   deploy_prod:
     uses: ./.github/workflows/sample-template.yml
