@@ -9,7 +9,7 @@ on:
 jobs:
   # this is the job id
   say-hello:
-    runs-on: ubnutu-latest
+    runs-on: self-hosted
 
     steps:
       - uses: actions/checkout@v4
