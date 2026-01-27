@@ -1,0 +1,17 @@
+name: Build and push docker Image
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  Docker-Build-push:
+    runs-on: self-hosted
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-java@v5
+        with:
+          java-version: '17'
+          cache: 'maven'
+        
