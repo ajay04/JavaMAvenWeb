@@ -1,0 +1,24 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  tests:
+    runs-on: self-hosted
+    strategy:
+      matrix:
+        node-version: [20, 22, 24]
+    
+    steps:
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm' # Automatically caches npm dependencies
+
+      - name: Print node.js version
+        run: node --version
+
+  
