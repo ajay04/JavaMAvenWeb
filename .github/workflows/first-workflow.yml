@@ -1,0 +1,18 @@
+# First workflow
+name: First workflow
+
+# Trigger when code is push to master branch
+on:
+  push:
+    branches: ['master']
+
+jobs:
+  # this is the job id
+  say-hello:
+    runs-on: ubnutu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Print a message
+        run: echo "Hello! I am running on a GitHub server."
