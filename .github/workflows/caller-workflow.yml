@@ -1,0 +1,11 @@
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy_prod:
+    uses: ./.github/workflows/sample-template.yml
+    with:
+      environment_type: prod
+    secrets:
+      TEST_VAR: ${{ secrets.TEST_VAR }}

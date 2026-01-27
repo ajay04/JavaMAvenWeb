@@ -1,0 +1,16 @@
+name: Reusable workflow
+on:
+  workflow_call:
+    input:
+      environment_type:
+        required: true
+        type: string
+      secrets:
+        TEST_VAR:
+          required: true
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+    steps:
+      - run: echo "Variable value is ${{ inputs.environment_type }} and secret value is ${{ secrets.TEST_VAR }}" 
