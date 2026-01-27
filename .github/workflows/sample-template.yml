@@ -1,13 +1,13 @@
 name: Reusable workflow
 on:
   workflow_call:
-    input:
+    inputs:
       environment_type:
         required: true
         type: string
-      secrets:
-        TEST_VAR:
-          required: true
+    secrets:
+      TEST_VAR:
+        required: true
 
 jobs:
   deploy:
